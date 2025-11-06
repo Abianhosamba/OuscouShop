@@ -656,3 +656,54 @@ header nav a.active, header nav a:hover{ transform:translateY(-3px); background:
   header nav ul { flex-direction: column; gap: 15px; }
   .footer-inner { flex-direction: column; text-align: center; }
 }
+
+/* ===========================
+   NAVIGATION MOBILE (Ajout pour styles.css)
+=========================== */
+
+/* 1. Cache le bouton hamburger sur les grands écrans */
+.menu-toggle {
+  display: none; 
+  color: #fff;
+}
+
+/* 2. Styles et comportement sur mobile */
+@media (max-width: 800px) { /* Le point de rupture où le menu passe en mobile */
+
+  /* Masque la navigation par défaut et la prépare pour l'ouverture en colonne */
+  header nav ul {
+      display: none; 
+      flex-direction: column;
+      position: absolute;
+      top: 70px; /* Aligne sous le header */
+      left: 0;
+      width: 100%;
+      background: #0f172a; /* Fond pour la lisibilité sur le menu déroulant */
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      padding: 10px 0;
+      z-index: 90; /* Assure que le menu est au-dessus du contenu */
+  }
+  
+  /* AFFICHE la liste quand le JS ajoute la classe 'active' */
+  header nav ul.active {
+      display: flex;
+  }
+  
+  /* Adapte les éléments de liste pour le menu déroulant */
+  header nav ul li {
+      margin: 5px 0;
+      text-align: center;
+  }
+  
+  /* AFFICHE le bouton hamburger sur mobile */
+  .menu-toggle {
+      display: block; 
+      font-size: 1.8rem;
+      cursor: pointer;
+  }
+  
+  /* Évite que le texte du logo soit trop collé au bouton */
+  header .logo {
+      margin-right: auto; 
+  }
+}

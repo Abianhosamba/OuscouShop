@@ -1,5 +1,15 @@
 // main.js - global popup, filters, scroll animations
 document.addEventListener('DOMContentLoaded', () => {
+/* ========== AJOUT DU MENU MOBILE TOGGLE ========== */
+const menuToggle = document.getElementById('menuToggle');
+const mainNav = document.getElementById('mainNav');
+
+if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', () => {
+        // Ajoute/retire la classe 'active' pour afficher/masquer le menu
+        mainNav.classList.toggle('active'); 
+    });
+}
     /* ========== GLOBAL IMAGE POPUP ========== */
     const popup = document.createElement('div');
     popup.className = 'image-popup';
